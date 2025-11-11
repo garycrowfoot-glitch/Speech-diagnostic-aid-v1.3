@@ -2,7 +2,8 @@ import streamlit as st
 import epitran
 import re
 
-epi = epitran.Epitran('eng-Latn')
+# Disable lexicon lookup to avoid flite dependency issues
+epi = epitran.Epitran('eng-Latn', use_lexicon=False)
 
 def clean_text(text):
     text = text.lower()
